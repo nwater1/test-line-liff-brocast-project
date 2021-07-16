@@ -1,0 +1,72 @@
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-width: 0 !important;
+}
+
+.css-16kwnwk:not([data-compact]) {
+  text-align: center;
+}
+
+
+
+
+div[role="group"][tabindex] {
+  height: 100%;
+}
+
+#zmmtg-root {
+  display: none;
+  min-width: 1100px !important;
+}
+
+
+
+.top {
+  background-color: #d79f00;
+}
+
+
+.bgimgBottom {
+
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+.bgimgTopLeft {
+
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.bgimgTopRight {
+
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom:0;
+  right: 0;
+}
+
+.colorbg{
+  background: rgb(215,159,0);
+background: linear-gradient(0deg, rgba(215,159,0,1) 36%, rgba(247,202,115,1) 100%, rgba(255,255,255,1) 100%);
+}
+
