@@ -1,38 +1,38 @@
-import React, { useState } from "react";
-import "../css/my.css";
-import Textfield from "@atlaskit/textfield";
-import Button from "@atlaskit/button";
-import backLeft from "../images/left.png";
-import backRight from "../images/right.png";
-import backBottom from "../images/logo.png";
-
-
+import React, { useState } from "react"
+import firebase from "gatsby-plugin-firebase"
+import "../css/my.css"
+import Textfield from "@atlaskit/textfield"
+import Button from "@atlaskit/button"
+import backLeft from "../images/left.png"
+import backRight from "../images/right.png"
+import backBottom from "../images/logo.png"
 
 export default ({ props }) => {
-
+  React.useEffect(() => {
+    firebase
+      .database()
+      .ref("/data")
+      .once("value")
+      .then(snapshot => {
+        setData(snapshot.val())
+      })
+  }, [])
 
   // data name
-  let randomNumber = 0;
+  let randomNumber = 0
   function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1) + min) //The maximum is inclusive and the minimum is inclusive
   }
   randomNumber =
-    "ธรรมล้านดวง " + getRandomIntInclusive(100000, 999999).toString();
+    "ธรรมล้านดวง " + getRandomIntInclusive(100000, 999999).toString()
 
-  const [value, setValue] = useState(randomNumber);
-  const handleChange = (e) => setValue(e.target.value);
-
-
-
-
-
+  const [value, setValue] = useState(randomNumber)
+  const handleChange = e => setValue(e.target.value)
 
   return (
     <>
-
-
       <div
         style={{
           display: "flex",
@@ -150,18 +150,15 @@ export default ({ props }) => {
                 boxShadow: "2px 5px 16px 0px #A3A3A3",
                 marginBottom: "30px",
               }}
-            // onClick={requestTargetRoom}
+              // onClick={requestTargetRoom}
             >
-
               เข้าห้อง zoom
             </Button>
 
-            <button >
-              ร่วมกิจกรรมผ่าน Application Zoom
-            </button>
+            <button>ร่วมกิจกรรมผ่าน Application Zoom</button>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}

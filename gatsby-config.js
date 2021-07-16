@@ -34,5 +34,18 @@ module.exports = {
         path: `./content/data/`,
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyCfj7k5kUq1exxyfiqh6wT7VU06G3YjncM",
+          authDomain: "test-line-liff-brocast-project.firebaseapp.com",
+          projectId: "test-line-liff-brocast-project",
+          storageBucket: "test-line-liff-brocast-project.appspot.com",
+          messagingSenderId: "333537918364",
+          appId: "1:333537918364:web:e7e49368eb60754d701c59",
+        },
+      },
+    },
   ],
 }
